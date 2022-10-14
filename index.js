@@ -27,13 +27,13 @@ function spawnProcess(language) {
   let image = "";
   switch (language) {
     case "JavaScript":
-      image = "bun-engine";
+        image = "ghcr.io/mbruty/codelab-codeengine/bun-engine";
       break;
     case "TypeScript":
-      image = "typescript-engine";
+        image = "ghcr.io/mbruty/codelab-codeengine/typescript-engine";
       break;
     case "C#":
-      image = "dotnet-engine";
+        image = "ghcr.io/mbruty/codelab-codeengine/dotnet-engine";
       break;
     default:
       throw "No engine found";
@@ -60,6 +60,6 @@ async function startRunning(image) {
   }
 }
 
-startRunning("bun-engine");
-startRunning("dotnet-engine");
-startRunning("typescript-engine");
+startRunning("ghcr.io/mbruty/codelab-codeengine/typescript-engine");
+startRunning("ghcr.io/mbruty/codelab-codeengine/dotnet-engine");
+startRunning("ghcr.io/mbruty/codelab-codeengine/bun-engine");
