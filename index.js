@@ -29,14 +29,6 @@ function getImageForLanguage(language) {
 }
 
 function spawnProcess(image) {
-  // Run the docker image
-  // -d detached
-  // --rm remove the container after is is finished
-  // ${image} The docker image to use
-  // -m Limit the memory usage to 512mb
-  // -cpus="1" Limit the amount of cpus to 1
-    ["-d", "--rm", "-m 512", "-cpus=1"],
-    // 
   docker.run(
     image,
     "",
@@ -51,14 +43,11 @@ function spawnProcess(image) {
   );
 }
 
-// Always keep atleast 1 container running at all times
-// This will speed up response times considerably
-
 async function warmup(numRequired) {
   const images = {
-    // "ghcr.io/mbruty/mike-codelab-codeengine/bun-engine": 0,
+    "ghcr.io/mbruty/mike-codelab-codeengine/bun-engine": 0,
     "ghcr.io/mbruty/mike-codelab-codeengine/typescript-engine": 0,
-    // "ghcr.io/mbruty/mike-codelab-codeengine/dotnet-engine": 0,
+    "ghcr.io/mbruty/mike-codelab-codeengine/dotnet-engine": 0,
     "ghcr.io/mbruty/mike-codelab-codeengine/python-engine": 0
   }
   const containers = await docker.listContainers();
@@ -75,4 +64,5 @@ async function warmup(numRequired) {
 
 }
 
-warmup(2);
+const os = require('os');
+warmup(os.cpus().length);
