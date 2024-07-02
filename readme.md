@@ -1,10 +1,9 @@
-# CodeLab - Docker Scheduler
 ## Navigation
-[Website](https://github.com/mbruty/mike-CodeLab-Web)
+[Website](https://github.com/mbruty/CodeLab-Web)
 
-[API](https://github.com/mbruty/mike-CodeLab-Graphql)
+[API](https://github.com/mbruty/CodeLab-Graphql)
 
-[CodeEngine](https://github.com/mbruty/mike-CodeLab-CodeEngine)
+[CodeEngine](https://github.com/mbruty/CodeLab-CodeEngine)
 
 Docker Scheduler
 
